@@ -8,6 +8,8 @@ spring:
 
 
 eureka:
+  server:
+    enableSelfPreservation: false
   instance:
     hostname: localhost
   client: 
@@ -16,4 +18,3 @@ eureka:
 
 server:
   port: 1111  
-

@@ -5,7 +5,7 @@ spring:
   freemarker:
     enabled: false           # Ignore Eureka dashboard FreeMarker templates
 
-server.port: 2222   # HTTP (Tomcat) port
+server.port: 0   # HTTP (Tomcat) port
 
 # Discovery Server Access
 #  1. DEV ONLY: Reduce the lease renewal interval to speed up registration

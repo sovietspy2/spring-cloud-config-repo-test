@@ -18,6 +18,6 @@ eureka:
     leaseRenewalIntervalInSeconds: 10   # DO NOT DO THIS IN PRODUCTION
     
     
-loadbalancer:
-  service:
-    warehouse: warhouse
+warehouse: warhouse
+
+payment: payment

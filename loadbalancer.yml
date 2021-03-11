@@ -1,0 +1,23 @@
+# Spring properties
+spring:
+  application:
+     name: loadbalancer
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+
+server.port: 8080   # HTTP (Tomcat) port
+
+# Discovery Server Access
+#  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
+#  2. Define URL of registration server (defaultZone)
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10   # DO NOT DO THIS IN PRODUCTION
+    
+    
+  loadbalancer:
+    service:
+      warehouse: warhouse-service

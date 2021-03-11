@@ -1,3 +1,11 @@
+registration:
+  server:
+    hostname: localhost
+
+spring:
+  config:
+    name: discovery-server
+
 
 eureka:
   instance:

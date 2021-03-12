@@ -1,51 +1,33 @@
+spring:
+  application:
+     name: loadbalancer
+  freemarker:
+    enabled: false           # Ignore Eureka dashboard FreeMarker templates
+
+server.port: 0   # HTTP (Tomcat) port
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10   # DO NOT DO THIS IN PRODUCTION
+
 server:
-  port: 80
+  port: 9999
 
 warehouseRoute: LOADBALANCER
 
-resilience4j.circuitbreaker:
-  configs:
-    default:
-      slidingWindowSize: 10
-      minimumNumberOfCalls: 5
-      permittedNumberOfCallsInHalfOpenState: 3
-      automaticTransitionFromOpenToHalfOpenEnabled: true
-      waitDurationInOpenState: 2s
-      failureRateThreshold: 5
-      eventConsumerBufferSize: 10
-      slowCallDurationThreshold: 200ms
-      slowCallRateThreshold: 30
-      recordExceptions:
-        - org.springframework.web.client.HttpServerErrorException
-        - java.io.IOException
-      ignoreExceptions:
-        - java.lang.IllegalStateException
-    shared:
-      slidingWindowSize: 100
-      permittedNumberOfCallsInHalfOpenState: 30
-      waitDurationInOpenState: 1s
-      failureRateThreshold: 50
-      eventConsumerBufferSize: 10
-      ignoreExceptions:
-        - java.lang.IllegalStateException
-  instances:
-    backendA:
-      baseConfig: default
-    backendB:
-      slidingWindowSize: 10
-      minimumNumberOfCalls: 10
-      permittedNumberOfCallsInHalfOpenState: 3
-      waitDurationInOpenState: 1s
-      failureRateThreshold: 50
-      eventConsumerBufferSize: 10
-      recordFailurePredicate: io.github.romeh.services.gateway.HttpInternalServicePredicate
+cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
 
-resilience4j.timelimiter:
-  time-limiter-aspect-order: 398
-  configs:
-    default:
-      timeoutDuration: 1s
-      cancelRunningFuture: false
-  instances:
-    backendB:
-      timeoutDuration: 250ms
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      expose: "*"

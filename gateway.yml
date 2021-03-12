@@ -3,6 +3,24 @@ spring:
      name: loadbalancer
   freemarker:
     enabled: false           # Ignore Eureka dashboard FreeMarker templates
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: retail-account
+          uri: lb://RETAIL-BANKING
+          predicates:
+            - Path=/digi/retailbank/v1/**
+          filters:
+            - name: Hystrix
+              args:
+                name: retail-account
+                fallbackUri: forward:/fallback/warehouse
+            #- name: AccountPreFilter
+            #- name: AccountPostFilter
 
 server.port: 0   # HTTP (Tomcat) port
 

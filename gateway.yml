@@ -26,6 +26,23 @@ cloud:
         locator:
           enabled: true
           lower-case-service-id: true
+          
+# RESILIENCE4J PROPERTIES
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        #registerHealthIndicator: true
+        ringBufferSizeInClosedState: 10
+        ringBufferSizeInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenStateMillis: 2000
+        failureRateThreshold: 5
+        eventConsumerBufferSize: 10
+    instances:
+      helloworld:
+        baseConfig: default
+        ringBufferSizeInClosedState: 5
 
 management:
   endpoints:

@@ -11,6 +11,8 @@ server.port: 0   # HTTP (Tomcat) port
 #  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
 #  2. Define URL of registration server (defaultZone)
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/

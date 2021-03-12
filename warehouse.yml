@@ -11,12 +11,12 @@ server.port: 0   # HTTP (Tomcat) port
 #  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
 #  2. Define URL of registration server (defaultZone)
 eureka:
-  instance:
-    metadataMap:
-      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
-    leaseRenewalIntervalInSeconds: 5
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 10   # DO NOT DO THIS IN PRODUCTION
+    metadataMap:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  leaseRenewalIntervalInSeconds: 5
+  

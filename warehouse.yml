@@ -27,8 +27,7 @@ eureka:
 logging:
   level:
     root: INFO
-    com.scg.service: TRACE
-    org.springframework.web: INFO
+    org.springframework.web: DEBUG
     org.springframework.web.HttpLogging: DEBUG
     org.springframework.security: DEBUG
     org.springframework.security.oauth2: DEBUG

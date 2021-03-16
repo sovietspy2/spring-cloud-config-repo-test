@@ -36,8 +36,8 @@ logging:
 warehouse:
   ribbon:
     eureka:
-      enabled: true
-    #listOfServers: localhost:8090,localhost:9092,localhost:9999
+      enabled: false
+    listOfServers: localhost:1234
     ServerListRefreshInterval: 15000
     
     

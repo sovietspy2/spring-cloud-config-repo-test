@@ -7,7 +7,7 @@ spring:
   freemarker:
     enabled: false           # Ignore Eureka dashboard FreeMarker templates
 
-accessTokenUri: http://localhost:8090/uaa/token_keys
+#accessTokenUri: http://localhost:8090/uaa/token_keys
 server.port: 8081   # HTTP (Tomcat) port
 
 # Discovery Server Access
@@ -34,13 +34,13 @@ logging:
     org.springframework.security: DEBUG
     org.springframework.security.oauth2: DEBUG
     
-warehouse:
-  ribbon:
-    eureka:
-      enabled: true
-    client:
-      serviceUrl:
-        defaultZone: http://localhost:1111/eureka/
-    #listOfServers: localhost:1234
+#warehouse:
+#  ribbon:
+#    eureka:
+#      enabled: true
+#    client:
+#      serviceUrl:
+#        defaultZone: http://localhost:1111/eureka/
+#    listOfServers: localhost:1234
     
     

@@ -38,9 +38,9 @@ warehouse:
   ribbon:
     eureka:
       enabled: true
-#    client:
-#      serviceUrl:
-#        defaultZone: http://localhost:1111/eureka/
-#    listOfServers: localhost:1234
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:1111/eureka/
+    listOfServers: localhost:1234
     
     

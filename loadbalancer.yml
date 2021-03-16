@@ -34,10 +34,10 @@ logging:
     org.springframework.security: DEBUG
     org.springframework.security.oauth2: DEBUG
     
-#warehouse:
-#  ribbon:
-#    eureka:
-#      enabled: true
+warehouse:
+  ribbon:
+    eureka:
+      enabled: true
 #    client:
 #      serviceUrl:
 #        defaultZone: http://localhost:1111/eureka/

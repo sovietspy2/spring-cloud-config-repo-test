@@ -1,5 +1,10 @@
 # Spring properties
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://uaa:8090/uaa/token_keys
   application:
      name: warehouse
   freemarker:

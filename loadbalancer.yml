@@ -16,13 +16,12 @@ server.port: 8080   # HTTP (Tomcat) port
 eureka:
   client:
     serviceUrl:
+      default: http://localhost:1111/eureka/
       defaultZone: http://localhost:1111/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 10   # DO NOT DO THIS IN PRODUCTION
 
 
-    
-    
 warehouse: WAREHOUSE
 
 payment: PAYMENT

@@ -13,12 +13,12 @@ server.port: 8080   # HTTP (Tomcat) port
 # Discovery Server Access
 #  1. DEV ONLY: Reduce the lease renewal interval to speed up registration
 #  2. Define URL of registration server (defaultZone)
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:1111/eureka/
-  instance:
-    leaseRenewalIntervalInSeconds: 10   # DO NOT DO THIS IN PRODUCTION
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:1111/eureka/
+#  instance:
+#    leaseRenewalIntervalInSeconds: 10   # DO NOT DO THIS IN PRODUCTION
     
     
 warehouse: WAREHOUSE

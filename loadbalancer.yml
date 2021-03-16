@@ -22,3 +22,11 @@ eureka:
 warehouse: WAREHOUSE
 
 payment: PAYMENT
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.web.HttpLogging: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG

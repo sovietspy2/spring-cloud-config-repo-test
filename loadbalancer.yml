@@ -1,9 +1,15 @@
 # Spring properties
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8090/uaa/token_keys
   application:
      name: loadbalancer
   freemarker:
     enabled: false           # Ignore Eureka dashboard FreeMarker templates
+
 
 server.port: 8080   # HTTP (Tomcat) port
 

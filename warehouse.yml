@@ -1,5 +1,7 @@
 # Spring properties
 spring:
+  main:
+    allow-bean-definition-overriding: true
   security:
     oauth2:
       resourceserver:

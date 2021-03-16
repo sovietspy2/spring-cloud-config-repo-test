@@ -37,10 +37,10 @@ logging:
 warehouse:
   ribbon:
     eureka:
-      enabled: true
+      enabled: false
     client:
       serviceUrl:
         defaultZone: http://localhost:1111/eureka/
-    listOfServers: localhost:1234
+    listOfServers: warehouse:1234
     
     

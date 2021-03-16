@@ -8,7 +8,7 @@ spring:
     enabled: false           # Ignore Eureka dashboard FreeMarker templates
 
 #accessTokenUri: http://localhost:8090/uaa/token_keys
-server.port: 8081   # HTTP (Tomcat) port
+server.port: 8080   # HTTP (Tomcat) port
 
 # Discovery Server Access
 #  1. DEV ONLY: Reduce the lease renewal interval to speed up registration

@@ -1,5 +1,7 @@
 # Spring properties
 spring:
+  main:
+    allow-bean-definition-overriding: true
   application:
      name: loadbalancer
   freemarker:
@@ -30,3 +32,6 @@ logging:
     org.springframework.web.HttpLogging: DEBUG
     org.springframework.security: DEBUG
     org.springframework.security.oauth2: DEBUG
+    
+    
+    
